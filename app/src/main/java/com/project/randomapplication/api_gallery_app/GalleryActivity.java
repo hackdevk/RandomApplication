@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -35,6 +36,10 @@ public class GalleryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 //open full screen activity with image clicked
+                Intent i = new Intent(getApplicationContext(),FullScreenActivity.class);
+                i.putExtra("IMAGES",imagesArray);
+                i.putExtra("POSITION",position);
+                startActivity(i);
             }
         };
 
