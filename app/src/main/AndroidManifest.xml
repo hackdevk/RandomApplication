@@ -13,7 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".api_gallery_app.FullScreenActivity"></activity>
+        <activity android:name=".retrofit_gallery_app.FullScreenAstroActivity"></activity>
+        <activity android:name=".retrofit_gallery_app.AstroHomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".api_gallery_app.FullScreenActivity" />
         <activity android:name=".api_gallery_app.GalleryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
