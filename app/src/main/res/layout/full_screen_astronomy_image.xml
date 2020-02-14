@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/full_screen_astro_scroll"
     android:fillViewport="true"
-    android:background="@color/scrollColor"
+    android:background="@color/backgroundColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,53 +17,163 @@
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/astro_progress_bar"
+            android:layout_centerInParent="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/image_title"
+            android:id="@+id/astro_full_image_title"
             android:layout_marginTop="26dp"
             android:paddingRight="8dp"
             android:paddingLeft="8dp"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/blackColor"
+            android:text="The Horsehead Nebula"
+            android:textColor="@color/blueColor"
+            android:fontFamily="serif-monospace"
             app:layout_constraintTop_toBottomOf="@id/astro_full_screen_image"
-            app:layout_constraintRight_toLeftOf="@id/image_date" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/image_date"
-            android:layout_marginTop="24dp"
-            android:paddingRight="8dp"
-            android:paddingLeft="8dp"
-            android:textColor="@color/blackColor"
-            app:layout_constraintTop_toBottomOf="@id/astro_full_screen_image"
-            app:layout_constraintLeft_toRightOf="@id/image_title" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:textSize="16sp"
-            android:id="@+id/image_description"
-            android:paddingRight="8dp"
-            android:paddingLeft="8dp"
-            android:textColor="@color/blackColor"
-            app:layout_constraintTop_toBottomOf="@id/image_title"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/image_copyright"
+            android:id="@+id/astro_image_date"
+            android:layout_marginTop="16dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:text="2019-12-18"
+            android:gravity="right"
+            android:fontFamily="serif-monospace"
+            android:textColor="@color/blackColor"
+            app:layout_constraintTop_toBottomOf="@id/astro_full_image_title"
+            app:layout_constraintLeft_toRightOf="parent" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:id="@+id/astro_image_description"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:fontFamily="serif-monospace"
+            android:text="What do neutron stars look like? Previously these city-sized stars were too small and too far away to resolve. Recently, however, the first maps of the locations and sizes of hotspots on a neutron star's surface have been made by carefully modeling how the rapid spin makes the star's X-ray brightness rise and fall.  Based on a leading model, an illustrative map of pulsar J0030+0451's hotspots is pictured, with the rest of the star's surface filled in with a false patchy blue.  J0030 spins once every 0.0049 seconds and is located about 1000 light years away. The map was computed from data taken by NASA's Neutron star Interior Composition ExploreR (NICER) X-ray telescope attached to the International Space Station.  The computed locations of these hotspots is surprising and not well understood. Because the gravitational lensing effect of neutron stars is so strong, J0300 displays more than half of its surface toward the Earth.  Studying the appearance of pulsars like J0030 allows accurate estimates of the neutron star's mass, radius, and the internal physics that keeps the star from imploding into a black hole."
+            android:textColor="@color/blackColor"
+            app:layout_constraintTop_toBottomOf="@id/astro_image_date"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/astro_media_type"
             android:layout_marginTop="12dp"
             android:paddingRight="8dp"
             android:paddingLeft="8dp"
             android:textSize="16sp"
+            android:text="image"
+            android:fontFamily="serif-monospace"
+            android:gravity="right"
             android:textColor="@color/blackColor"
-            app:layout_constraintTop_toBottomOf="@id/image_description"
+            app:layout_constraintTop_toBottomOf="@id/astro_image_description"
+            app:layout_constraintLeft_toLeftOf="parent" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/astro_image_copyright"
+            android:layout_marginTop="7dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:textSize="16sp"
+            android:fontFamily="serif-monospace"
+            android:text="Mark HansonMartin PughSSROPROMPTCTIONSF"
+            android:textColor="@color/blackColor"
+            app:layout_constraintTop_toBottomOf="@id/astro_media_type"
             app:layout_constraintLeft_toLeftOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView android:layout_width="match_parent"-->
+<!--    android:layout_height="fill_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/full_screen_astro_scroll"-->
+<!--    android:fillViewport="true"-->
+<!--    android:background="@color/scrollColor"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" >-->
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/astro_full_screen_image"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"/>-->
+<!--        <ProgressBar-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/astro_progress_bar"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/image_title"-->
+<!--            android:layout_marginTop="26dp"-->
+<!--            android:paddingRight="8dp"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/blackColor"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/astro_full_screen_image"-->
+<!--            app:layout_constraintRight_toLeftOf="@id/image_date" />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/image_date"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:paddingRight="8dp"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:textColor="@color/blackColor"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/astro_full_screen_image"-->
+<!--            app:layout_constraintLeft_toRightOf="@id/image_title" />-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="7dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:id="@+id/image_description"-->
+<!--            android:paddingRight="8dp"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:textColor="@color/blackColor"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/image_title"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/image_copyright"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:paddingRight="8dp"-->
+<!--            android:paddingLeft="8dp"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@color/blackColor"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/image_description"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</ScrollView>-->
 
 <!--<TextView&ndash;&gt;-->
 <!--            android:layout_width="wrap_content"-->

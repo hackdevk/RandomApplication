@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AstroHomeActivity extends AppCompatActivity {
 
     ArrayList<String> astroPicsList;
-    List<AstroPics> astroPicDetailsList;
+//    List<AstroPics> astroPicDetailsList;
     RecyclerView recyclerView;
 //    Retrofit retrofit;
     RecyclerView.LayoutManager layoutManager;
@@ -49,7 +49,7 @@ public class AstroHomeActivity extends AppCompatActivity {
 //                .build();
 
         astroPicsList = new ArrayList<>();
-        astroPicDetailsList = new ArrayList<>();
+//        astroPicDetailsList = new ArrayList<>();
         recyclerView = findViewById(R.id.astro_recycler_view);  //getting the recycler view
         //setting the layout manager as the gridd layout managerggfdfh
         layoutManager = new GridLayoutManager(this,2);
@@ -93,8 +93,8 @@ public class AstroHomeActivity extends AppCompatActivity {
 //                astroPicsList.add(obj.get("url"));
 //                astroPicsList.add(new AstroPics(obj.getString("url"),obj.getString("explanation")));
                 astroPicsList.add(obj.getString("url"));
-                astroPicDetailsList.add(new AstroPics(obj.getString("copyright"),obj.getString("url"),obj.getString("date"),obj.getString("explanation")
-                        ,obj.getString("media_type"),obj.getString("title"),obj.getString("media_type")));
+//                astroPicDetailsList.add(new AstroPics(obj.getString("copyright"),obj.getString("url"),obj.getString("date"),obj.getString("explanation")
+//                        ,obj.getString("media_type"),obj.getString("title"),obj.getString("media_type")));
 //                astroPicsList.add(obj.getString("url"));
 
             }

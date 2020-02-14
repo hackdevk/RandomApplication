@@ -6,5 +6,9 @@
 
     <color name="scrollColor">#5CE2C0CE</color>
     <color name="blackColor">#0A0A0A</color>
+    <color name="blueColor">#30454E</color>
+    <color name="bgcolor">#C5DBE6</color>
+
+    <color name="backgroundColor">#BBBBBD</color>
 
 </resources>

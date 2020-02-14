@@ -46,6 +46,9 @@ class AstroPicsAdapter extends RecyclerView.Adapter<AstroPicsAdapter.PicturesHol
     public PicturesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View picsView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pics_grid_view,parent,false);
         return new PicturesHolder(picsView);
+
+
+
     }
 
     @Override
@@ -54,19 +57,18 @@ class AstroPicsAdapter extends RecyclerView.Adapter<AstroPicsAdapter.PicturesHol
 //        String currentImage = picsList.get(position);
         ImageView imageView = holder.imageView;
         final ProgressBar progressBar = holder.progressBar;
-        Glide.with(context).load(picsList.get(position))
-                .listener(new RequestListener<Drawable>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        return false;
-                    }
+        Glide.with(context).load(picsList.get(position)).listener(new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                return false;
+            }
 
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        progressBar.setVisibility(View.GONE);
-                        return false;
-                    }
-                }).into(imageView);
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                progressBar.setVisibility(View.GONE);
+                return false;
+            }
+        }).into(imageView);
     }
 
     @Override
